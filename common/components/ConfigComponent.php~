@@ -1,0 +1,13 @@
+<?
+
+namespace common\components;
+
+use yii\base\Component;
+
+class ConfigComponent extends Component{
+
+    public static function getConfigImage($id,$original=false){
+        $base = \Yii::$app->params['baseUrl'].'/uploads/users/';
+        return $base.(($original) ? $id : 'small_'.$id).'.jpg';
+    }
+}
